@@ -1,0 +1,456 @@
+/* RESET + FONTE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa no mínimo 100% da altura da visão do usuário */
+  background-color: #dcdcdc;
+}
+
+/* Garante que o HTML e o Body ocupem toda a altura da tela */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+main, .content {
+    flex: 1; /* Isso faz esse container ocupar todo o espaço restante, empurrando o footer */
+}
+
+header {
+  background-color: #0b3d1f;
+  padding: 15px 80px;
+}
+
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h2 {
+  color: white;
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Botão de login */
+.login {
+  background-color: #ffffff;
+  color: black;
+  padding: 6px 40px;
+  border-radius: 20px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* CARD */
+section {
+  width: 1000px;
+  /* text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  overflow: hidden; */
+}
+
+section > h1 {
+  color: #0b3d1f;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+section > h3 {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+input {
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background-color: #F6F6F6;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background-color: #0b3d1f;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Texto de cadastro */
+
+section > h1 {
+  font-weight: 1000;
+}
+
+section > p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+section > h2 {
+  font-weight: 600;
+}
+
+footer {
+  background-color: #0b3d1f;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+footer > nav {
+  display: flex;
+  justify-content: center; /* CENTRALIZA */
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+footer > nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+footer > h2 {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+footer > p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+
+/*Pagina sobre e contato*/
+
+.topo-verde {
+  background-color: #0b3d1f;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.topo-verde h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.topo-verde p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* CONTEÚDO */
+.conteudo {
+  padding: 30px;
+  text-align: left;
+  max-width: 700px; /* largura ideal de leitura */
+  margin: 0 auto;
+}
+
+/* PARÁGRAFOS */
+.conteudo p {
+  font-size: 16px;
+  line-height: 1.7; /* espaçamento entre linhas */
+  color: #333;
+  margin-bottom: 18px;
+  text-align: justify; /* opcional: deixa alinhado dos dois lados */
+}
+
+/** Header **/
+
+/* Configuração do Header */
+header {
+    display: flex;
+    justify-content: space-between; /* Joga o logo para a esquerda e a nav para a direita */
+    align-items: center; /* Alinha verticalmente no centro */
+    padding: 1rem 5%;
+    background-color: #002B11; /* Cor de fundo apenas para exemplo, pode alterar */
+}
+
+.logo {
+    color: white;
+    margin: 0;
+}
+
+/* Navegação */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px; /* Espaçamento entre os links */
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+/* Destaque do Botão de Login */
+.btn-login {
+    background-color: white !important;
+    color: #002B11 !important; /* Cor do texto escura para contrastar com o fundo branco */
+    padding: 8px 40px;
+    border-radius: 20px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #f0f0f0 !important;
+}
+
+/** Footer **/
+
+/* Footer Container - A Coluna Principal */
+.main-footer {
+    background-color: #002B11;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Transforma o footer em uma coluna */
+    align-items: center;    /* Centraliza os itens horizontalmente */
+    padding: 40px 20px;
+    gap: 30px;              /* Espaçamento entre as rows */
+}
+
+/* Row 1: Nav do Footer */
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Row 2: Logo no Footer */
+.footer-brand h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+    /* Estilo igual ao do Header */
+}
+
+/* Row 3: Redes Sociais */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Row 4: Texto de Info */
+.footer-info {
+    text-align: center;
+    max-width: 1000px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.footer-info p {
+    font-size: 0.8rem;
+    color: #bbb;
+    margin: 0;
+}
+
+/* Cores do Projeto */
+:root {
+    --green-dark: #002d1a;
+    --green-light: #004d2c;
+    --orange: #ff9900;
+    --white: #ffffff;
+}
+
+/* 1. Estrutura de Coluna Principal */
+#content {
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column; /* Define o container como uma coluna */
+    width: 100%;
+    flex: 1;                /* Faz o conteúdo expandir para empurrar o footer */
+    gap: 0;                 /* Remove espaços indesejados entre as seções */
+}
+
+/* 2. Estilização das Rows (Seções) */
+
+/* Row 1: Hero (Verde Escuro) */
+.hero {
+    background-color: #002d1a; /* Verde escuro da imagem */
+    color: white;
+    padding: 60px 0px;
+    width: 60%;
+    margin: auto;          /* Margem lateral para o efeito de 'bloco solto' */
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.category-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.category-buttons button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category-buttons button:hover {
+    background: white;
+    color: #002d1a;
+}
+
+/* Row 2: Grid de Locais (Fundo Branco) */
+.section-container {
+    padding: 60px 5%;
+    text-align: center;
+    margin: auto;
+}
+
+.section-container h2 {
+    color: #002d1a;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.grid-destaque {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-featured {
+    height: 450px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-overlay {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Row 3: Newsletter (Azul Full-Width) */
+.newsletter {
+    background-color: #007bff; /* Azul da imagem */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;              /* Ocupa a largura total da tela */
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    width: 300px;
+}
+
+.btn-orange {
+    background-color: #ff9900; /* Laranja de destaque */
+    color: #000;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+}
