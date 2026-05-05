@@ -10,6 +10,8 @@ body {
   background-color: #dcdcdc;
 }
 
+
+
 header {
   background-color: #0b3d1f;
   padding: 15px 80px;
@@ -30,7 +32,7 @@ header h2 {
 
 nav {
   display: flex;
-  gap: 25px;
+  gap: 50px;
   align-items: center;
 }
 
@@ -44,7 +46,7 @@ nav a {
 .login {
   background-color: #ffffff;
   color: black;
-  padding: 6px 25px;
+  padding: 6px 40px;
   border-radius: 20px;
 }
 
@@ -57,11 +59,11 @@ main {
 /* CARD */
 section {
   background-color: #ffffff;
-  padding: 40px;
   border-radius: 15px;
   width: 800px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
 }
 
 section > h1 {
@@ -144,4 +146,43 @@ footer > h2 {
 footer > p {
   font-size: 12px;
   margin-top: 10px;
+}
+
+
+/*Pagina sobre e contato*/
+
+.topo-verde {
+  background-color: #0b3d1f;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.topo-verde h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.topo-verde p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* CONTEÚDO */
+.conteudo {
+  padding: 30px;
+  text-align: left;
+  max-width: 700px; /* largura ideal de leitura */
+  margin: 0 auto;
+}
+
+/* PARÁGRAFOS */
+.conteudo p {
+  font-size: 16px;
+  line-height: 1.7; /* espaçamento entre linhas */
+  color: #333;
+  margin-bottom: 18px;
+  text-align: justify; /* opcional: deixa alinhado dos dois lados */
 }
