@@ -14,12 +14,14 @@ function loadContent(file, div) {
         });
 }
 
+// Carrega header e footer
 window.onload = function() {
     loadContent('html/components/header.html', 'header-placeholder');
     loadContent('html/components/footer.html', 'footer-placeholder');
 };
 
-document.onclick = function(evento) {
+// Navegação SPA
+document.addEventListener("click", function(evento) {
     var elemento = evento.target;
 
     if (elemento.tagName === 'A' && elemento.hasAttribute('data-link')) {
@@ -27,6 +29,11 @@ document.onclick = function(evento) {
 
         var pagina = elemento.getAttribute('href');
 
+        if (pagina === "index.html") {
+            location.reload();
+            return;
+        }
+
         loadContent('html/pages/' + pagina, 'content');
     }
-};
+});
