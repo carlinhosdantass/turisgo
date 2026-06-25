@@ -1,0 +1,209 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+input {
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    background-color: #F6F6F6;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    background-color: #0b3d1f;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-orange {
+    background-color: #ff9900;
+    color: #000;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #002B11;
+}
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+header h2 {
+    color: white;
+    font-weight: 600;
+}
+
+.logo {
+    color: white;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.login {
+    background-color: #ffffff;
+    color: black;
+    padding: 6px 40px;
+    border-radius: 20px;
+}
+
+.btn-login {
+    background-color: white !important;
+    color: #002B11 !important;
+    padding: 8px 40px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: #f0f0f0 !important;
+}
+
+footer {
+    background-color: #0b3d1f;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer > nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+footer > nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+footer > h2 {
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+footer > p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.main-footer {
+    background-color: #002B11;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 30px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-brand h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer-info {
+    text-align: center;
+    max-width: 1000px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.footer-info p {
+    font-size: 0.8rem;
+    color: #bbb;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    header > div {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .btn-login {
+        padding: 6px 20px;
+    }
+}

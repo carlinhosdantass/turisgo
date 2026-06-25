@@ -1,16 +1,3 @@
-function loadContent(file, div, callback) {
-    fetch(file)
-        .then(response => {
-            if (!response.ok) throw new Error("Erro ao carregar: " + file);
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById(div).innerHTML = html;
-            if (callback) callback();
-        })
-        .catch(error => console.error(error));
-}
-
 window.onload = function () {
     loadContent('html/components/header.html', 'header-placeholder');
     loadContent('html/components/footer.html', 'footer-placeholder');
@@ -22,99 +9,116 @@ function initHome() {
     fetchRoteirosDestaque();
 }
 
-function fetchRoteirosDestaque() {
-    const urlAPI = 'https://turisgo-backend.vercel.app/api/roteiros';
+async function fetchLocaisDestaque() {
+    const locais = await getLocais();
+    const container = document.getElementById('locais-container');
+    if (!container) return;
 
-    fetch(urlAPI)
-        .then(response => response.json())
-        .then(roteiros => {
-            const container = document.getElementById('roteiros-container');
-            if (!container) return;
+    container.innerHTML = '';
+    
+    if (locais.length === 0) {
+        container.innerHTML = '<p>Nenhum local encontrado.</p>';
+        return;
+    }
 
-            container.innerHTML = '';
+    const destaques = locais.slice(0, 3);
 
-            const destaques = roteiros.slice(0, 3);
+    destaques.forEach(local => {
+        const card = document.createElement('div');
+        card.className = 'card-featured';
+        const imgUrl = `https://turisgo-backend.vercel.app${local.imagem_destaque}`;
+        card.style.backgroundImage = `url('${imgUrl}')`;
 
-            destaques.forEach(roteiro => {
-                const card = document.createElement('div');
-                card.className = 'card-roteiro';
+        card.innerHTML = `
+            <div class="card-overlay">
+                <h3>${local.nome}</h3>
+                <p>${local.descricao_breve}</p>
+            </div>
+        `;
 
-                card.innerHTML = `
-                    <div class="roteiro-header">
-                        <span class="tag-duracao">⏱ ${roteiro.duracao_estimada}</span>
-                    </div>
-                    <h3>${roteiro.titulo}</h3>
-                    <p>${roteiro.descricao}</p>
-                    <button class="btn-roteiro">Ver roteiro</button>
-                `;
-
-                card.addEventListener('click', () => {
-                    // Aqui eh pra implementar quando o card for clicado
-                });
-
-                container.appendChild(card);
-            });
-        })
-        .catch(error => {
-            console.error(error);
-            const container = document.getElementById('roteiros-container');
-            if (container) container.innerHTML = '<p>Erro ao carregar roteiros.</p>';
+        // CLIQUE DOS LOCAIS CORRIGIDO E ATIVADO!
+        card.addEventListener('click', () => {
+            localStorage.setItem('selectedLocalId', local.id);
+            loadContent('html/pages/local.html', 'content', initLocal);
         });
+
+        container.appendChild(card);
+    });
 }
 
-document.addEventListener("click", function (evento) {
-    var elemento = evento.target;
+async function fetchRoteirosDestaque() {
+    const roteiros = await getRoteiros();
+    const container = document.getElementById('roteiros-container');
+    if (!container) return;
 
-    if (elemento.tagName === 'A' && elemento.hasAttribute('data-link')) {
-        evento.preventDefault();
-        var pagina = elemento.getAttribute('href');
+    container.innerHTML = '';
 
-        if (pagina === "home.html" || pagina === "index.html") {
-            loadContent('html/pages/home.html', 'content', initHome);
-        } else if (pagina === "local.html") {
-            loadContent('html/pages/local.html', 'content', initLocal);
+    if (roteiros.length === 0) {
+        container.innerHTML = '<p>Nenhum roteiro encontrado.</p>';
+        return;
+    }
+
+    const destaques = roteiros.slice(0, 3);
+
+    destaques.forEach(roteiro => {
+        const card = document.createElement('div');
+        card.className = 'card-roteiro';
+
+        card.innerHTML = `
+            <div class="roteiro-header">
+                <span class="tag-duracao">⏱ ${roteiro.duracao_estimada}</span>
+            </div>
+            <h3>${roteiro.titulo}</h3>
+            <p>${roteiro.descricao}</p>
+            <button class="btn-roteiro">Ver roteiro</button>
+        `;
+
+        card.addEventListener('click', () => {
+            alert(`Página de roteiros em breve! Você clicou em: ${roteiro.titulo}`);
+        });
+
+        container.appendChild(card);
+    });
+}
+
+async function initLocal() {
+    const localId = localStorage.getItem('selectedLocalId');
+    
+    if (!localId) {
+        document.getElementById('content').innerHTML = '<p style="text-align:center; margin-top:50px;">Local não encontrado. Volte para a Home.</p>';
+        return;
+    }
+
+    const locais = await getLocais(); // Busca da API
+    const local = locais.find(item => item.id == localId);
+
+    if (!local) {
+        document.getElementById('local-title').innerText = "Local não encontrado";
+        return;
+    }
+
+    const title = document.getElementById('local-title');
+    if (title) title.innerText = local.nome;
+
+    const descBreve = document.getElementById('local-desc-breve');
+    if (descBreve) descBreve.innerText = local.descricao_breve;
+
+    const sobre = document.getElementById('local-sobre');
+    if (sobre) sobre.innerText = local.descricao_longa;
+    
+    const addressElement = document.getElementById('local-address');
+    if (addressElement) {
+        if(local.endereco) {
+            addressElement.innerText = `📍 ${local.endereco}`;
+            addressElement.style.display = 'block';
         } else {
-            loadContent('html/pages/' + pagina, 'content');
+            addressElement.style.display = 'none';
         }
     }
-});
 
-function fetchLocaisDestaque() {
-    const urlAPI = 'https://turisgo-backend.vercel.app/api/locais';
-
-    fetch(urlAPI)
-        .then(response => response.json())
-        .then(locais => {
-            const container = document.getElementById('locais-container');
-            if (!container) return;
-
-            container.innerHTML = '';
-            const destaques = locais.slice(0, 3);
-
-            destaques.forEach(local => {
-                const card = document.createElement('div');
-                card.className = 'card-featured';
-                card.style.backgroundImage = `url('https://picsum.photos/200/300')`;
-
-                card.innerHTML = `
-                    <div class="card-overlay">
-                        <h3>${local.nome}</h3>
-                        <p>${local.descricao_breve}</p>
-                    </div>
-                `;
-
-                card.addEventListener('click', () => {
-                    // Aqui eh pra implementar quando o card for clicado
-                });
-
-                container.appendChild(card);
-            });
-        })
-        .catch(error => {
-            console.error(error);
-            const container = document.getElementById('locais-container');
-            if (container) {
-                container.innerHTML = '<p>Erro ao carregar locais.</p>';
-            }
-        });
+    const banner = document.getElementById('local-banner');
+    if (banner) {
+        const bgImage = local.imagem_destaque ? local.imagem_destaque : 'https://picsum.photos/1200/400';
+        banner.style.backgroundImage = `url('${bgImage}')`;
+    }
 }
