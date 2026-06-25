@@ -26,6 +26,12 @@ document.addEventListener("click", function (evento) {
             loadContent('html/pages/home.html', 'content', initHome);
         } else if (pagina === "local.html") {
             loadContent('html/pages/local.html', 'content', initLocal);
+        } else if (pagina === "locais.html") { // <--- ADICIONE ESTA LINHA
+            loadContent('html/pages/locais.html', 'content', initLocais);
+        } else if (pagina === "roteiros.html") {
+            loadContent('html/pages/roteiros.html', 'content', initRoteiros);
+        } else if (pagina === "roteiro.html") {
+            loadContent('html/pages/roteiro.html', 'content', initRoteiro);
         } else {
             loadContent('html/pages/' + pagina, 'content');
         }

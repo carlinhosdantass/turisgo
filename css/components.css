@@ -207,3 +207,39 @@ footer > p {
         padding: 6px 20px;
     }
 }
+
+/* Breadcrumbs */
+.breadcrumb {
+    padding: 15px 5%;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+}
+
+.breadcrumb a {
+    color: var(--green-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+.breadcrumb .current {
+    color: #555;
+    font-weight: 600;
+}

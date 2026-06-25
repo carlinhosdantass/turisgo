@@ -31,3 +31,33 @@
     margin-bottom: 18px;
     text-align: justify;
 }
+
+.conteudo-largo {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grid-locais {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.grid-locais .card-featured {
+    flex: none; 
+    max-width: 100%; 
+    scroll-snap-align: none;
+}
+
+.topo-sem-margem {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: 0;
+}
+
+.page-container {
+    background-color: #f5f5f5;
+}
