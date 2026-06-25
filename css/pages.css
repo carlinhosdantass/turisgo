@@ -61,3 +61,103 @@
 .page-container {
     background-color: #f5f5f5;
 }
+
+/* Auth e formulários */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 5%;
+}
+
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.auth-title {
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.auth-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.btn-full {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.auth-link {
+    color: var(--green-dark);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+.form-page-header {
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+.form-page-header .auth-title, 
+.form-page-header .auth-subtitle {
+    text-align: left;
+}
+
+.form-large {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 800px;
+    width: 100%;
+}
+
+.textarea-large {
+    height: 120px;
+    resize: vertical;
+}
+
+.btn-large {
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}

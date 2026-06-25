@@ -1,0 +1,16 @@
+<div class="page-container auth-container">
+    <div class="form-page-header">
+        <h1 class="auth-title">Cadastrar Novo Local</h1>
+        <p class="auth-subtitle">Adicione um novo ponto turístico à nossa plataforma.</p>
+    </div>
+
+    <form onsubmit="enviarNovoLocal(event)" class="auth-form form-large">
+        <input type="text" id="add-nome" class="form-input" placeholder="Nome do Local" required>
+        <input type="text" id="add-breve" class="form-input" placeholder="Descrição Breve" required>
+        <textarea id="add-longa" class="form-input textarea-large" placeholder="Descrição Longa" required></textarea>
+        <input type="text" id="add-endereco" class="form-input" placeholder="Endereço Completo">
+        <input type="text" id="add-img" class="form-input" placeholder="Link da Imagem (URL externa ou caminho como /imagens/foto.jpg)">
+        
+        <button type="submit" class="btn-orange btn-full btn-large">Cadastrar</button>
+    </form>
+</div>

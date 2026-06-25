@@ -1,5 +1,5 @@
 window.onload = function () {
-    loadContent('html/components/header.html', 'header-placeholder');
+    loadContent('html/components/header.html', 'header-placeholder', checkAuth);
     loadContent('html/components/footer.html', 'footer-placeholder');
     loadContent('html/pages/home.html', 'content', initHome);
 };

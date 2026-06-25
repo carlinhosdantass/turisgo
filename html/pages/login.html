@@ -1,34 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Login - GoTurismos</title>
-</head>
+<div class="page-container auth-container">
+    <div class="auth-card">
+        <h2 class="auth-title">Acessar Conta</h2>
+        
+        <form onsubmit="fazerLogin(event)" class="auth-form">
+            <input type="email" id="login-email" class="form-input" placeholder="Seu e-mail" required>
+            <input type="password" id="login-senha" class="form-input" placeholder="Sua senha" required>
+            <button type="submit" class="btn-orange btn-full">Entrar</button>
+        </form>
 
-<body>
-
-<main>
-  <section>
-    <h1>Realize o login e explore com a gente!</h1>
-
-    <h2>Dados pessoais</h2>
-
-    <form>
-      <label>E-mail *</label>
-      <input type="email" placeholder="Digite seu e-mail...">
-
-      <label>Senha *</label>
-      <input type="password" placeholder="Digite sua senha...">
-
-      <button type="submit">Fazer login</button>
-    </form>
-
-    <p>
-      Ainda não tem conta?
-      <a href="#">Realizar cadastro</a>
-    </p>
-  </section>
-</main>
-
-</body>
-</html>
+        <p class="auth-footer">
+            Não tem uma conta? <a href="#" onclick="event.preventDefault(); loadContent('html/pages/cadastro.html', 'content')" class="auth-link">Cadastre-se</a>
+        </p>
+    </div>
+</div>
